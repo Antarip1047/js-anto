@@ -13,7 +13,7 @@ let userEmail;
 const id=Symbol('123')
 const anotherId=Symbol('123')
 
-console.log(id === anotherId);
+//console.log(id === anotherId);
 
 const BigInt=1255695898836636637n;
 
@@ -28,9 +28,32 @@ let myObj={
 }
 //function
 const myFunction = function(){
-    console.log("Hello Antarip");
+    //console.log("Hello Antarip");
 }
 
 //refer ecma to know return type of datatypes all
 //return type of all nonprimitive data type are function
 // return type of function is object function 
+
+// 2 types of memory: stack(primitive type), heap(non-primitive)
+//stack gives copy 
+//heap gives reference
+
+let myYTName="Anto Plays"
+let another="antoz plays"
+
+//console.log(another);
+//console.log(myYTName);
+//value changes and copy returns
+
+let user = {
+    email: "anta@gmail.com",
+    upi: "anto@oksbi"
+}
+
+let userTwo = user
+
+userTwo.email="avijit@gmail.com"
+//console.log(user.email);
+//console.log(userTwo.email);
+//user gets updated value in both the cases
