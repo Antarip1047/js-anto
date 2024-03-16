@@ -1,0 +1,23 @@
+/* Style for the unordered list */
+#images {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+/* Style for list items */
+#images li {
+    display: inline-block; /* Display items in a row */
+    margin: 10px; /* Add spacing between items */
+}
+
+/* Style for images */
+#images img {
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Style for the hyperlink */
+#google {
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+}
