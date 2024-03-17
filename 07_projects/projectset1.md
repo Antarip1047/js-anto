@@ -12,6 +12,10 @@
 
 [Click here 4](https://stackblitz.com/edit/dom-project-chaiaurcode-rmfc6o?file=4-GuessTheNumber%2Fchaiaurcode.js)
 
+[Click here 5](https://stackblitz.com/edit/dom-project-chaiaurcode-n3rwmo?file=5-keyboard%2Fchaiaurcode.js)
+
+[Click here 6](https://stackblitz.com/edit/dom-project-chaiaurcode-n3rwmo?file=6-unlimitedColors%2Fchaiaurcode.js)
+
 # solution code
 
 ## project 1
@@ -182,5 +186,65 @@ function newGame() {
     playGame = true;
   });
 }
+
+```
+## project 5
+
+```javascript
+const insert = document.getElementById('insert');
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class='color'>
+    <table>
+    <tr>
+      <th>Key</th>
+      <th>Keycode</th>
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' '?'SPACE':e.key}</td>
+      <td>${e.keyCode}</td>
+      <td>${e.code}</td>
+    </tr>
+    </table>
+  </div>
+  `;
+});
+
+
+```
+
+## project 6
+
+```javascript
+//generate random color
+
+const randomCol = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+let intervalid;
+const startChangingColor = function () {
+  if (!intervalid) {
+    intervalid = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomCol();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalid);
+  intervalid = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
 
 ```
